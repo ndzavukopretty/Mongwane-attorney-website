@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import akaniPhoto from '../assets/images/Akani.jpeg'
+import visionImage from '../assets/images/vision.jpg'
+import missionImage from '../assets/images/mission.jpg'
+// Optional images: import yours and assign them here, e.g.
+// import heroPhoto from '../assets/images/hero.jpg'
+const heroImage = ''
+
+
 const pillars = [
   {
     title: 'Client-focused solutions',
@@ -31,14 +38,27 @@ const directors = [
 
 <template>
   <main>
-    <!-- Intro -->
+    <!-- Hero banner with gold triangle -->
+    <section class="bg-ink relative h-20 overflow-hidden md:h-25">
+      <img
+        v-if="heroImage"
+        :src="heroImage"
+        alt=""
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div class="bg-ink/60 absolute inset-0"></div>
+      <div
+        class="bg-brass absolute inset-0 [clip-path:polygon(0_45%,0_100%,40%_100%)]"
+      ></div>
+    </section>
+
+    <!-- About us (navy, centred) -->
     <section class="bg-ink text-paper">
-      <div class="mx-auto max-w-4xl px-6 py-20">
-        <p class="text-brass text-sm tracking-wide">About us</p>
-        <h1 class="font-display mt-3 text-4xl leading-tight">
-          A progressive, client-focused law firm, by your side.
+      <div class="mx-auto max-w-4xl px-6 pb-16 pt-8 text-center">
+        <h1 class="font-display text-brass text-4xl font-extrabold uppercase tracking-tight md:text-5xl">
+          About us
         </h1>
-        <p class="text-paper/80 mt-6 max-w-2xl text-base leading-relaxed">
+        <p class="mt-6 text-base leading-relaxed">
           Mongwane Attorneys was established in Tzaneen and now proudly serves the
           Bushbuckridge area and surrounding regions. We specialise in a wide range of
           legal fields, including Commercial Law, Employment Law, Public and
@@ -49,39 +69,61 @@ const directors = [
       </div>
     </section>
 
-    <!-- Vision / Mission -->
-    <section class="mx-auto max-w-4xl px-6 py-16">
-      <div class="grid gap-12 md:grid-cols-2">
+    <!-- Vision (white, text left / image right) -->
+    <section class="overflow-hidden py-4">
+      <div class="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-2">
         <div>
-          <h2 class="font-display text-ink text-2xl">Vision</h2>
-          <p class="text-slate-text mt-3 leading-relaxed">
+          <h2 class="font-display text-brass text-4xl font-extrabold uppercase tracking-tight">
+            Our Vision
+          </h2>
+          <p class="text-ink mt-5 font-semibold leading-relaxed">
             To be a leading South African law firm, recognised for excellence,
             transformation, and innovative legal solutions that empower our clients
             and contribute to a just society.
           </p>
         </div>
-        <div>
-          <h2 class="font-display text-ink text-2xl">Mission</h2>
-          <p class="text-slate-text mt-3 leading-relaxed">
+        <div class="bg-brass/20 h-72 overflow-hidden rounded-l-[14rem] md:h-96">
+          <img v-if="visionImage" :src="visionImage" alt="" class="h-full w-full object-cover" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission (navy, image left / text right) -->
+    <section class="bg-ink text-paper overflow-hidden py-4">
+      <div class="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-2">
+        <div class="bg-brass/20 order-2 h-72 overflow-hidden rounded-r-[14rem] md:order-1 md:h-96">
+          <img v-if="missionImage" :src="missionImage" alt="" class="h-full w-full object-cover" />
+        </div>
+        <div class="order-1 md:order-2">
+          <h2 class="font-display text-brass text-4xl font-extrabold uppercase tracking-tight">
+            Our Mission
+          </h2>
+          <p class="mt-5 leading-relaxed">
             To provide high-quality, client-focused legal services by understanding
             our clients' needs, delivering strategic solutions, and upholding the
             highest standards of integrity, professionalism, and inclusivity.
           </p>
         </div>
       </div>
+    </section>
 
-      <div class="mt-14 grid gap-8 sm:grid-cols-2">
-        <div v-for="p in pillars" :key="p.title" class="border-ink/15 border-t pt-4">
-          <h3 class="text-ink font-medium">{{ p.title }}</h3>
+    <!-- Pillars -->
+    <section class="mx-auto max-w-4xl px-6 py-16">
+      <div class="grid gap-8 sm:grid-cols-2">
+        <div v-for="p in pillars" :key="p.title" class="border-brass border-t-2 pt-4">
+          <h3 class="text-ink font-bold">{{ p.title }}</h3>
           <p class="text-slate-text mt-2 text-sm leading-relaxed">{{ p.body }}</p>
         </div>
       </div>
     </section>
 
-    <!-- Transformation note -->
-    <section class="bg-brass/10 py-14">
-      <div class="mx-auto max-w-4xl px-6">
-        <p class="text-ink leading-relaxed">
+    <!-- Transformation note (navy, centred) -->
+    <section class="bg-ink text-paper py-16">
+      <div class="mx-auto max-w-4xl px-6 text-center">
+        <h2 class="font-display text-brass text-3xl font-extrabold uppercase tracking-tight md:text-4xl">
+          Our Origins
+        </h2>
+        <p class="mt-6 leading-relaxed">
           From its humble beginnings in 2021 with a single Black director, Mongwane
           Attorneys has grown into a majority Black-owned firm — proud of our 100%
           Black and female legal team, and committed to empowerment, transformation,
@@ -90,17 +132,31 @@ const directors = [
       </div>
     </section>
 
-    <!-- Directors -->
-  <section class="mx-auto max-w-4xl px-6 py-16">
-  <h2 class="font-display text-ink text-2xl">Directors</h2>
-  <div class="mt-8 max-w-sm">
-    <div v-for="d in directors" :key="d.name">
-      <img :src="d.photo" :alt="d.name" class="w-full rounded object-contain" />
-      <h3 class="font-display text-ink mt-4 text-lg">{{ d.name }}</h3>
-      <p class="text-brass text-sm">{{ d.role }}</p>
-      <p class="text-slate-text mt-3 text-sm leading-relaxed">{{ d.bio }}</p>
-    </div>
-  </div>
-</section>
+    <!-- Directors (white, text left / photo right) -->
+    <section class="overflow-hidden py-4">
+      <div class="mx-auto max-w-6xl px-6">
+        <h2 class="font-display text-brass text-4xl font-extrabold uppercase tracking-tight">
+          Directors
+        </h2>
+        <div
+          v-for="d in directors"
+          :key="d.name"
+          class="mt-1 grid items-center gap-10 md:grid-cols-2"
+        >
+          <div>
+            <h3 class="font-display text-ink text-2xl font-bold">{{ d.name }}</h3>
+            <p class="text-brass mt-1 text-sm font-semibold uppercase tracking-wide">{{ d.role }}</p>
+            <p class="text-ink mt-4 font-semibold leading-relaxed">{{ d.bio }}</p>
+          </div>
+        <div class="mx-auto w-full max-w-sm overflow-hidden rounded-tl-[8rem] bg-slate-100">
+  <img
+    :src="d.photo"
+    :alt="d.name"
+    class="block h-auto w-full object-contain"
+  />
+</div>
+        </div>
+      </div>
+    </section>
   </main>
 </template>

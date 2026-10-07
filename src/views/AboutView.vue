@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import akaniPhoto from '../assets/images/Akani.jpeg'
+import akaniPhoto from '../assets/images/Akani2.jpeg'
 import visionImage from '../assets/images/vision.jpg'
 import missionImage from '../assets/images/mission.jpg'
 // Optional images: import yours and assign them here, e.g.
@@ -133,30 +133,46 @@ const directors = [
     </section>
 
     <!-- Directors (white, text left / photo right) -->
-    <section class="overflow-hidden py-4">
+   <section class="overflow-hidden py-4 md:py-4">
       <div class="mx-auto max-w-6xl px-6">
-        <h2 class="font-display text-brass text-4xl font-extrabold uppercase tracking-tight">
-          Directors
-        </h2>
-        <div
-          v-for="d in directors"
-          :key="d.name"
-          class="mt-1 grid items-center gap-10 md:grid-cols-2"
-        >
-          <div>
-            <h3 class="font-display text-ink text-2xl font-bold">{{ d.name }}</h3>
-            <p class="text-brass mt-1 text-sm font-semibold uppercase tracking-wide">{{ d.role }}</p>
-            <p class="text-ink mt-4 font-semibold leading-relaxed">{{ d.bio }}</p>
-          </div>
-        <div class="mx-auto w-full max-w-sm overflow-hidden rounded-tl-[8rem] bg-slate-100">
-  <img
-    :src="d.photo"
-    :alt="d.name"
-    class="block h-auto w-full object-contain"
-  />
-</div>
-        </div>
-      </div>
+           <div
+             v-for="d in directors"
+               :key="d.name"
+               class="grid overflow-hidden md:grid-cols-2"
+              >
+              <!-- LEFT: Director photo -->
+              <div class="relative min-h-[500px] bg-slate-100 md:min-h-[650px]">
+               <img
+                 :src="d.photo"
+                 :alt="d.name"
+                 class="absolute inset-0 h-full w-full object-cover object-center"
+                />
+             </div>
+             <!-- RIGHT: Information panel -->
+             <div  class="bg-ink flex flex-col justify-center px-8 py-12 text-white sm:px-12 md:px-14 lg:px-16">
+               <!-- Gold decorative line -->
+               <div class="mb-6 h-1 w-16 bg-[#C9A227]"></div>
+               <!-- Section title -->
+               <h2  class="font-display mb-8 text-4xl font-extrabold uppercase tracking-tight text-white md:text-5xl" >
+                 Directors
+               </h2>
+               <!-- Director name -->
+               <h3 class="font-display text-2xl font-bold leading-tight text-white md:text-3xl">
+                 {{ d.name }}
+               </h3>
+               <!-- Role -->
+               <p class="mt-2 text-sm font-semibold uppercase tracking-[0.15em] text-[#C9A227]" >
+                  {{ d.role }}
+               </p>
+               <!-- Bio -->
+               <p class="mt-6 max-w-xl text-base leading-8 text-white/90">
+                  {{ d.bio }}
+               </p>
+               <!-- Bottom decorative line -->
+               <div class="mt-10 h-px w-20 bg-[#C9A227]"></div>
+             </div>
+         </div>
+       </div>
     </section>
   </main>
 </template>

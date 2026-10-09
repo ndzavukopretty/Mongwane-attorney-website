@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-import BookingModal from '../components/BookingModal.vue'
 
-const showBooking = ref(false)
 const showContent = ref(false)
 
 // scroll-triggered animation for the office details section
@@ -40,7 +38,7 @@ onUnmounted(() => {
 <template>
   <main class="bg-blue-900">
     <!-- Map -->
-    <section class="mx-auto h-[375px] w-3/4 overflow-hidden rounded-3xl">
+    <section class="mx-auto h-[375px] w-3/4 overflow-hidden ">
       <iframe
         title="Mongwane Attorneys - Tzaneen"
         class="h-full w-full border-0"
@@ -61,12 +59,12 @@ onUnmounted(() => {
           <h1 class="font-display text-ink mt-3 text-4xl leading-tight">
             We're ready to assist you
           </h1>
-          <button
-            class="bg-ink text-white mt-6 rounded px-6 py-3 text-sm font-medium hover:opacity-90"
-            @click="showBooking = true"
+          <a
+            href="mailto:info@mongwaneattorneys.co.za?subject=Consultation%20Request"
+            class="bg-ink text-white mt-6 inline-block rounded px-6 py-3 text-sm font-medium hover:opacity-90"
           >
             Book consultation
-          </button>
+          </a>
         </div>
 
         <div
@@ -90,9 +88,9 @@ onUnmounted(() => {
       <div class="grid gap-12 sm:grid-cols-2">
         <div
           class="transition-all duration-700 ease-out"
-          :class="showOffices ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'"
-          style="transition-delay: 100ms"
-        >
+           :class="showOffices ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'"
+           style="transition-delay: 100ms"
+          >
           <h3 class="font-display text-white text-lg">
             Tzaneen — Main Branch
           </h3>
@@ -302,7 +300,5 @@ onUnmounted(() => {
         </div>
       </div>
     </section>
-
-    <BookingModal v-if="showBooking" @close="showBooking = false" />
   </main>
 </template>

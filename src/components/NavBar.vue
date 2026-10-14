@@ -28,7 +28,7 @@ function confirmCall() {
       <nav class="hidden gap-8 text-base md:flex">
         <RouterLink to="/" class="font-bold transition-colors hover:text-brass [&.router-link-exact-active]:text-blue-600">Home</RouterLink>
         <RouterLink to="/about" class="font-bold transition-colors hover:text-brass [&.router-link-exact-active]:text-blue-600">About Us</RouterLink>
-        <RouterLink to="/services" class="font-bold transition-colors hover:text-brass [&.router-link-exact-active]:text-blue-600">Services</RouterLink>
+        <RouterLink to="/services" class="font-bold transition-colors hover:text-brass [&.router-link-exact-active]:text-blue-600">Our Services</RouterLink>
         <RouterLink to="/contact" class="font-bold transition-colors hover:text-brass [&.router-link-exact-active]:text-blue-600">Contact Us</RouterLink>
       </nav>
 
@@ -83,9 +83,9 @@ function confirmCall() {
 
     <nav v-if="open" class="flex flex-col gap-4 px-6 pb-6 text-base font-bold md:hidden">
       <RouterLink to="/" class="[&.router-link-exact-active]:text-blue-600" @click="open = false">Home</RouterLink>
-      <RouterLink to="/about" class="[&.router-link-exact-active]:text-blue-600" @click="open = false">About</RouterLink>
-      <RouterLink to="/services" class="[&.router-link-exact-active]:text-blue-600" @click="open = false">Services</RouterLink>
-      <RouterLink to="/contact" class="[&.router-link-exact-active]:text-blue-600" @click="open = false">Contact</RouterLink>
+      <RouterLink to="/about" class="[&.router-link-exact-active]:text-blue-600" @click="open = false">About Us</RouterLink>
+      <RouterLink to="/services" class="[&.router-link-exact-active]:text-blue-600" @click="open = false">Our Services</RouterLink>
+      <RouterLink to="/contact" class="[&.router-link-exact-active]:text-blue-600" @click="open = false">Contact Us</RouterLink>
 
       <!-- Social icons (mobile) -->
       <div class="flex items-center gap-2">

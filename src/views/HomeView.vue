@@ -85,7 +85,7 @@ onUnmounted(() => observer?.disconnect())
             class="font-display hero-in mt-3 text-4xl leading-tight md:text-5xl"
             style="animation-delay: 0.2s"
           >
-            Legal counsel built on integrity, and rooted in the communities we serve.
+            Law Firm built on integrity, and rooted in the communities we serve.
           </h1>
           <p class="text-paper/80 hero-in mt-6 max-w-md text-base" style="animation-delay: 0.35s">
             Mongwane Attorneys delivers high-quality, strategic legal services to

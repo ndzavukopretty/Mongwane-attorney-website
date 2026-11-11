@@ -21,17 +21,17 @@ const services: Service[] = [
 <template>
   <main>
     <section class="bg-white">
-      <div class="text-slate-text mt-4 max-w-xl mx-auto px-6 pt-8 pb-10 text-center">
-        <h1 class="font-display text-ink mt-3 text-4xl leading-tight">
-          Our services
-        </h1>
-        <p class="text-slate-text mt-4 max-w-xl">
-          Mongwane Attorneys offers a full suite of legal services across all major
-          areas of practice, providing strategic, comprehensive legal support to
-          individuals, corporates, and government entities.
-        </p>
-      </div>
-    </section>
+      <div class="mx-auto mt-4 max-w-5xl px-6 pt-8 pb-2">
+        <h1 class="font-display text-ink mt-3 text-center text-4xl leading-tight">
+         Our services
+       </h1>
+       <p class="text-slate-text mt-4 max-w-4xl text-left leading-relaxed text-pretty">
+        Mongwane Attorneys offers a full suite of legal services across all major
+        areas of practice, providing strategic, comprehensive legal support to
+        individuals, corporates, and government entities.
+       </p>
+     </div>
+   </section>
 
     <section class="bg-ink py-14">
       <div class="mx-auto max-w-5xl px-6">

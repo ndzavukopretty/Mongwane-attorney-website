@@ -52,22 +52,22 @@ const directors = [
       ></div>
     </section>
 
-    <!-- About us (navy, centred) -->
-    <section class="bg-ink text-paper">
-      <div class="mx-auto max-w-4xl px-6 pb-16 pt-8 text-center">
-        <h1 class="font-display text-brass text-4xl font-extrabold uppercase tracking-tight md:text-5xl">
+   <!-- About us (navy) -->
+   <section class="bg-ink text-paper">
+     <div class="mx-auto max-w-6xl px-6 pb-8 pt-2">
+        <h1 class="font-display text-brass text-center text-4xl font-extrabold uppercase tracking-tight md:text-5xl">
           About us
-        </h1>
-        <p class="mt-6 text-base leading-relaxed">
-          Mongwane Attorneys was established in Tzaneen and now proudly serves the
-          Bushbuckridge area and surrounding regions. We specialise in a wide range of
-          legal fields, including Commercial Law, Employment Law, Public and
-          Administrative Law, Conveyancing, Insurance Law, and General Litigation —
-          and we take the time to understand our clients' industries, goals, and
-          challenges.
-        </p>
-      </div>
-    </section>
+       </h1>
+       <p class="mt-6 max-w-4xl text-left text-base leading-relaxed text-pretty">
+         Mongwane Attorneys was established in Tzaneen and now proudly serves the
+         Bushbuckridge area and surrounding regions. We specialise in a wide range of
+         legal fields, including Commercial Law, Employment Law, Public and
+         Administrative Law, Conveyancing, Insurance Law, and General Litigation —
+         and we take the time to understand our clients' industries, goals, and
+         challenges.
+       </p>
+     </div>
+   </section>
 
     <!-- Vision (white, text left / image right) -->
     <section class="overflow-hidden py-4">
@@ -108,29 +108,31 @@ const directors = [
     </section>
 
     <!-- Pillars -->
-    <section class="mx-auto max-w-4xl px-6 py-16">
-      <div class="grid gap-8 sm:grid-cols-2">
-        <div v-for="p in pillars" :key="p.title" class="border-brass border-t-2 pt-4">
-          <h3 class="text-ink font-bold">{{ p.title }}</h3>
-          <p class="text-slate-text mt-2 text-sm leading-relaxed">{{ p.body }}</p>
-        </div>
-      </div>
-    </section>
+   <section class="py-16">
+     <div class="mx-auto max-w-6xl px-6">
+       <div class="grid max-w-4xl gap-8 sm:grid-cols-2">
+         <div v-for="p in pillars" :key="p.title" class="border-brass border-t-2 pt-4">
+            <h3 class="text-ink font-bold">{{ p.title }}</h3>
+            <p class="text-slate-text mt-2 text-sm leading-relaxed">{{ p.body }}</p>
+         </div>
+       </div>
+     </div>
+   </section>
 
-    <!-- Transformation note (navy, centred) -->
-    <section class="bg-ink text-paper py-16">
-      <div class="mx-auto max-w-4xl px-6 text-center">
-        <h2 class="font-display text-brass text-3xl font-extrabold uppercase tracking-tight md:text-4xl">
-          Our Origins
-        </h2>
-        <p class="mt-6 leading-relaxed">
-          From its humble beginnings in 2021 with a single Black director, Mongwane
-          Attorneys has grown into a majority Black-owned firm — proud of our 100%
-          Black and female legal team, and committed to empowerment, transformation,
-          and inclusive legal excellence.
-        </p>
-      </div>
-    </section>
+  <!-- Our Origins (navy) -->
+<section class="bg-ink text-paper py-16">
+  <div class="mx-auto max-w-6xl px-6">
+    <h2 class="font-display text-brass text-center text-3xl font-extrabold uppercase tracking-tight md:text-4xl">
+      Our Origins
+    </h2>
+    <p class="mt-6 max-w-4xl leading-relaxed text-pretty">
+      From its humble beginnings in 2021 with a single Black director, Mongwane
+      Attorneys has grown into a majority Black-owned firm — proud of our 100%
+      Black and female legal team, and committed to empowerment, transformation,
+      and inclusive legal excellence.
+    </p>
+  </div>
+</section>
 
     <!-- Directors (white, text left / photo right) -->
    <section class="overflow-hidden py-4 md:py-4">

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import reviewQr from '../assets/mongwane_review_qr.png'
 
 const showContent = ref(false)
 
@@ -49,43 +50,64 @@ onUnmounted(() => {
     </section>
 
     <section class="bg-white">
-      <div class="mx-auto max-w-4xl px-6 pt-8 pb-10 grid gap-8 sm:grid-cols-2 sm:items-start">
+      <div class="mx-auto max-w-4xl px-6 pt-6 pb-6 grid gap-6 sm:grid-cols-2 sm:items-start">
+        <!-- Left column: intro, button, business hours -->
         <div
           class="transition-all duration-700 ease-out"
           :class="showContent ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'"
           style="transition-delay: 100ms"
         >
           <p class="text-brass text-sm tracking-wide">Get in touch</p>
-          <h1 class="font-display text-ink mt-3 text-4xl leading-tight">
+          <h1 class="font-display text-ink mt-2 text-4xl leading-tight">
             We're ready to assist you
           </h1>
           <a
             href="mailto:info@mongwaneattorneys.co.za?subject=Consultation%20Request"
-            class="bg-ink text-white mt-6 inline-block rounded px-6 py-3 text-sm font-medium hover:opacity-90"
+            class="bg-ink text-white mt-5 inline-block rounded px-6 py-3 text-sm font-medium hover:opacity-90"
           >
             Book consultation
           </a>
+
+          <!-- Business Hours -->
+          <div class="mt-6">
+            <h3 class="font-bold text-ink text-lg">Business Hours</h3>
+            <dl class="mt-2 space-y-1 text-ink text-sm">
+              <div class="flex justify-between gap-6 max-w-xs">
+                <dt class="font-bold">Monday – Friday</dt>
+                <dd>08:00 – 16:30</dd>
+              </div>
+            </dl>
+          </div>
         </div>
 
+        <!-- Right column: review QR -->
         <div
-          class="sm:justify-self-end transition-all duration-700 ease-out"
+          class="text-center transition-all duration-700 ease-out"
           :class="showContent ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'"
           style="transition-delay: 400ms"
         >
-          <h3 class="font-bold text-ink text-lg">Business Hours</h3>
-          <dl class="mt-3 space-y-1 text-ink text-sm">
-            <div class="flex justify-between gap-6">
-              <dt class="font-bold">Monday – Friday</dt>
-              <dd>08:00 – 16:30</dd>
-            </div>
-          </dl>
+          <h3 class="text-lg font-semibold">Leave us a review</h3>
+          <p class="text-sm text-gray-600">Scan the code or tap the button</p>
+          <img
+            :src="reviewQr"
+            alt="QR code to review Mongwane Attorneys on Google"
+            class="mx-auto my-3 w-32"
+          />
+          <a
+            href="https://g.page/r/CTh6_z-FGXXTECE/review"
+            target="_blank"
+            rel="noopener"
+            class="inline-block rounded bg-blue-900 px-5 py-2 text-white"
+          >
+            Review us on Google
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Office details -->
-    <section ref="officeSection" class="mx-auto max-w-4xl px-6 py-16">
-      <div class="grid gap-12 sm:grid-cols-2">
+    <section ref="officeSection" class="mx-auto max-w-4xl px-6 py-10">
+      <div class="grid gap-8 sm:grid-cols-2">
         <div
           class="transition-all duration-700 ease-out"
            :class="showOffices ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'"
